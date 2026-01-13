@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 226, 232, 240; /* slate-200 */
+  --background-start-rgb: 15, 23, 42; /* slate-950 */
+  --background-end-rgb: 2, 6, 23; /* slate-950 darker */
+  
+  --industrial-accent: 71, 85, 105; /* slate-600 */
+  --industrial-steel: 148, 163, 184; /* slate-400 */
+  --industrial-charcoal: 30, 41, 59; /* slate-800 */
+}
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-200 selection:bg-slate-700 font-sans antialiased;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(30, 41, 59, 0.4) 0, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(15, 23, 42, 0.4) 0, transparent 50%);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans tracking-tight text-white;
+  }
+}
+
+@layer components {
+  .industrial-grid {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  }
+
+  .glass-panel {
+    @apply bg-slate-900/50 backdrop-blur-md border border-slate-800/50;
+  }
+
+  .btn-industrial {
+    @apply inline-flex items-center justify-center rounded-sm bg-slate-800 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-slate-700 border border-slate-700;
+  }
+
+  .btn-industrial-outline {
+    @apply inline-flex items-center justify-center rounded-sm border border-slate-700 px-6 py-3 text-sm font-medium text-slate-300 transition-all hover:bg-slate-800/50 hover:text-white;
+  }
+}
